@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from menu.views import CategoryAPIView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('categories/', CategoryAPIView.as_view(), name='menu_categories')
 ]
