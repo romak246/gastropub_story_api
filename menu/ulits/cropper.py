@@ -1,8 +1,11 @@
 from PIL import Image
 
+from menu.models.category import Category
+from menu.models.dish import Dish
+
 
 class Cropper:
-    def __init__(self, obj):
+    def __init__(self, obj: Category | Dish):
         self.image = obj.image
         self.cropping = obj.cropping
 

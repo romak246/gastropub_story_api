@@ -1,7 +1,7 @@
-from PIL import Image
 from rest_framework import serializers
-from menu.models import Category
-from menu.utils import Cropper
+
+from menu.models.category import Category
+from menu.ulits.cropper import Cropper
 
 
 class CategorySerializer(serializers.ModelSerializer):
