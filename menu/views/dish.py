@@ -19,7 +19,7 @@ class DishAPIView(ListAPIView, viewsets.ViewSet):
         * **limit** - пагинация, возвращает указанное количество элементов
     """
     model = Dish
-    queryset = Dish.objects.all()
+    queryset = Dish.objects.all().exclude(hidden=True)
     serializer_class = DishSerializer
     filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ['category__slug']

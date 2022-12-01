@@ -15,8 +15,8 @@ class Dish(models.Model):
     ingredients = models.CharField('Состав блюда', max_length=99)
     slug = models.SlugField('Идентификатор', unique=True, max_length=99, blank=True)
     category = models.ForeignKey(Category, verbose_name="category", related_name="dishes",
-                                 on_delete=models.CASCADE, null=True)
-
+                                 on_delete=models.CASCADE, null=True, blank=True)
+    hidden = models.BooleanField('Скрыть блюдо из меню', default=False)
     class Meta:
         verbose_name = 'Блюдо'
         verbose_name_plural = 'Блюда'
